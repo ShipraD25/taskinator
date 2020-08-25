@@ -1,13 +1,16 @@
 //console.dir(window.document);
 
-var buttonE1 = document.querySelector("#save-task");
+var formE1 = document.querySelector("#task-form");
 var tasksToDoE1 = document.querySelector("#tasks-to-do");
 
 var createTaskHandler = function () {
+    event.preventDefault();
+    
     var lisItemE1 =document.createElement("li");
     lisItemE1.className ="task-item";
     lisItemE1.textContent = "This is a new task. ";
     tasksToDoE1.appendChild(lisItemE1);
  };
-buttonE1.addEventListener("click", createTaskHandler);
+
+formE1.addEventListener("submit", createTaskHandler);
 
